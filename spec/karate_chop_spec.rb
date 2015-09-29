@@ -14,16 +14,17 @@ RSpec.describe KarateChop do
     expect(KarateChop.chop(2, [1, 3, 5])).to eq(-1)
     expect(KarateChop.chop(4, [1, 3, 5])).to eq(-1)
     expect(KarateChop.chop(6, [1, 3, 5])).to eq(-1)
-    # #
+    
     expect(KarateChop.chop(1, [1, 3, 5, 7])).to eq(0)
     expect(KarateChop.chop(3, [1, 3, 5, 7])).to eq(1)
     expect(KarateChop.chop(5, [1, 3, 5, 7])).to eq(2)
     expect(KarateChop.chop(7, [1, 3, 5, 7])).to eq(3)
-    # expect(KarateChop.chop(0, [1, 3, 5, 7])).to eq(-1)
-    # expect(KarateChop.chop(2, [1, 3, 5, 7])).to eq(-1)
-    # expect(KarateChop.chop(4, [1, 3, 5, 7])).to eq(-1)
-    # expect(KarateChop.chop(6, [1, 3, 5, 7])).to eq(-1)
-    # expect(KarateChop.chop(8, [1, 3, 5, 7])).to eq(-1)
+
+    expect(KarateChop.chop(0, [1, 3, 5, 7])).to eq(-1)
+    expect(KarateChop.chop(2, [1, 3, 5, 7])).to eq(-1)
+    expect(KarateChop.chop(4, [1, 3, 5, 7])).to eq(-1)
+    expect(KarateChop.chop(6, [1, 3, 5, 7])).to eq(-1)
+    expect(KarateChop.chop(8, [1, 3, 5, 7])).to eq(-1)
   end
 
   it 'sum to X' do
@@ -55,6 +56,4 @@ RSpec.describe KarateChop do
 
     expect(KarateChop.palindrome?(['a', 'b', 'c'])).to eq(false)
   end
-
-
 end

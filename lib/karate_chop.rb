@@ -1,9 +1,15 @@
-require "karate_chop/version"
+require 'karate_chop/version'
 require 'byebug'
 
 module KarateChop
   def self.chop(int, array_of_int, start_index = 0)
     if array_of_int.empty?
+      return -1
+    end
+
+    if array_of_int.length == 1
+      return start_index if array_of_int[0] === int
+        
       return -1
     end
 
@@ -17,40 +23,14 @@ module KarateChop
     if int < middle_value
       new_array = array_of_int.take(middle_index)
 
-      if new_array.length == 1
-        if new_array[0] === int
-          return (middle_index - 1) + start_index
-        else
-          return -1
-        end
-      end
-
       return chop(int, new_array, start_index)
     end
 
     if int > middle_value
       new_array = array_of_int.drop(middle_index)
 
-      if new_array.length == 1
-        if new_array[0] === int
-          return (middle_index - 1) + start_index
-        else
-          return -1
-        end
-      end
-
       return chop(int, new_array, middle_index)
     end
-
-    check int, array_of_int, start_index
-  end
-
-  def check(int, array_of_int, start_index)
-    if array_of_int.length == 1 && array_of_int[0] === int
-      return index + start_index
-    end
-
-    -1
   end
 
   def self.sum(n) 
